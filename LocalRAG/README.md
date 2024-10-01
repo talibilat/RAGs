@@ -1,6 +1,5 @@
-Based on your inputs, here’s a **README** file that explains the whole project (frontend and backend), how to run the app, and includes the configuration settings.
+![LocalRAG](image.png)
 
----
 
 # RAG: Document Processing and Query System
 
