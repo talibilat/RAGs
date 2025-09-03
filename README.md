@@ -1,4 +1,42 @@
-## 9fin SQL Chat Agent
+# RAGs - Retrieval-Augmented Generation Projects
+
+A collection of advanced RAG (Retrieval-Augmented Generation) implementations showcasing different approaches and use cases.
+
+## 📁 Projects
+
+### 🗄️ [SQLRAG](./SQLRAG/) - SQL-based RAG Agent for Financial Data Analysis
+Function-based agent that generates PostgreSQL from natural language, executes it, and answers with inline sources. Specialized for financial data analysis with comprehensive evaluation framework.
+
+**Key Features:**
+- Natural Language → SQL → Answer Pipeline
+- PostgreSQL Integration with normalized financial data
+- RAGAS Evaluation Framework
+- Docker Containerization
+- Interactive CLI with Rich formatting
+
+### 🌐 [RagWithScraper](./RagWithScraper/) - Web Scraper RAG
+RAG system that combines web scraping with retrieval-augmented generation for dynamic content analysis.
+
+### 🏠 [LocalRAG](./LocalRAG/) - Local RAG Implementation
+Local RAG system for offline and privacy-focused applications.
+
+### 🔍 [Retrieval System](./Retrieval%20System/) - Advanced Retrieval Components
+Core retrieval system components and algorithms.
+
+---
+
+## 🚀 Quick Start
+
+Each project has its own setup instructions. Navigate to the specific project folder for detailed documentation.
+
+### General Prerequisites
+- Docker and Python 3.12
+- OpenAI API Key (for most projects)
+- PostgreSQL (for SQLRAG)
+
+---
+
+## 📊 SQLRAG - Financial Data Analysis Agent
 
 Function-based agent that generates PostgreSQL from natural language, executes it, and answers with inline sources.
 
