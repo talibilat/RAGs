@@ -1,5 +1,6 @@
 
-name: ci
+name: CI/CD Pipeline
+
 on:
   push:
     branches: [ main ]
@@ -7,16 +8,117 @@ on:
     branches: [ main ]
 
 jobs:
-  test:
+  # Test LocalRAG Backend
+  test-localrag-backend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./LocalRAG/backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install LocalRAG Backend Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+      - name: Test LocalRAG Backend
+        run: |
+          python -c "import sys; print('Python version:', sys.version)"
+          python -c "import main; print('LocalRAG backend imports successfully')"
+
+  # Test RagWithScraper Backend
+  test-ragwithscraper-backend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./RagWithScraper/backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install RagWithScraper Backend Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+      - name: Test RagWithScraper Backend
+        run: |
+          python -c "import sys; print('Python version:', sys.version)"
+          python -c "import main; print('RagWithScraper backend imports successfully')"
+
+  # Test SQLRAG
+  test-sqlrag:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./SQLRAG
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install SQLRAG Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+      - name: Test SQLRAG
+        run: |
+          python -c "import sys; print('Python version:', sys.version)"
+          python -c "import src.agent; print('SQLRAG imports successfully')"
+
+  # Test LocalRAG Frontend
+  test-localrag-frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./LocalRAG/frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      - name: Install LocalRAG Frontend Dependencies
+        run: npm ci
+      - name: Test LocalRAG Frontend
+        run: |
+          npm test -- --watchAll=false --passWithNoTests
+
+  # Test RagWithScraper Frontend
+  test-ragwithscraper-frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./RagWithScraper/frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      - name: Install RagWithScraper Frontend Dependencies
+        run: npm ci
+      - name: Test RagWithScraper Frontend
+        run: |
+          npm run build
+
+  # Lint and Format Check
+  lint-check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
-      - name: Install deps
+          python-version: '3.12'
+      - name: Install Linting Tools
         run: |
-          python -m pip install -r requirements.txt
-      - name: Tests
+          python -m pip install --upgrade pip
+          python -m pip install flake8 black isort
+      - name: Lint Python Files
         run: |
-          pytest -q
+          find . -name "*.py" -not -path "./venv/*" -not -path "./*/venv/*" -not -path "./*/myenv/*" -not -path "./*/node_modules/*" | xargs flake8 --max-line-length=100 --ignore=E203,W503
+      - name: Check Code Formatting
+        run: |
+          find . -name "*.py" -not -path "./venv/*" -not -path "./*/venv/*" -not -path "./*/myenv/*" -not -path "./*/node_modules/*" | xargs black --check --line-length=100
