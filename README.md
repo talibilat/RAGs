@@ -15,13 +15,34 @@ Function-based agent that generates PostgreSQL from natural language, executes i
 - Interactive CLI with Rich formatting
 
 ### 🌐 [RagWithScraper](./RagWithScraper/) - Web Scraper RAG
-RAG system that combines web scraping with retrieval-augmented generation for dynamic content analysis.
+RAG system that combines web scraping with retrieval capabilities to answer questions based on scraped web content.
 
-### 🏠 [LocalRAG](./LocalRAG/) - Local RAG Implementation
-Local RAG system for offline and privacy-focused applications.
+**Key Features:**
+- Multi-source Web Scraping
+- Content Preprocessing and Normalization
+- Vector Search and Similarity Matching
+- Real-time Querying
+- Source Attribution and Citation
 
-### 🔍 [Retrieval System](./Retrieval%20System/) - Advanced Retrieval Components
-Core retrieval system components and algorithms.
+### 📚 [LocalRAG](./LocalRAG/) - Document Processing and Query System
+Full-stack application for uploading PDF documents, generating embeddings, and querying documents using natural language.
+
+**Key Features:**
+- PDF Upload and Text Extraction
+- Embeddings-Based Search
+- React Frontend with FastAPI Backend
+- Real-time Document Processing
+- Interactive Chat Interface
+
+### 🔍 [Retrieval System](./Retrieval%20System/) - Advanced Document Retrieval Framework
+Comprehensive retrieval system for efficient document search, similarity matching, and content discovery.
+
+**Key Features:**
+- Multi-modal Retrieval (text, images, structured data)
+- Advanced Indexing Strategies
+- Hybrid Search (semantic + keyword)
+- Scalable Architecture
+- Performance Benchmarks
 
 ---
 
