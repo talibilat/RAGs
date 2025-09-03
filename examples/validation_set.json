@@ -1,0 +1,37 @@
+[
+  {
+    "question": "How many companies are there?",
+    "expected_numbers": [3],
+    "description": "Count total companies in database"
+  },
+  {
+    "question": "What is the latest Sales for Tronox?",
+    "expected_numbers": [2949.0],
+    "description": "Latest LTM Sales for Tronox (2025-06-30)"
+  },
+  {
+    "question": "What is the latest Sales for Chemco Holdings?",
+    "expected_numbers": [5310.0],
+    "description": "Latest LTM Sales for Chemco Holdings (2025-06-30)"
+  },
+  {
+    "question": "What is the latest Sales for MineralsCo International?",
+    "expected_numbers": [1920.0],
+    "description": "Latest LTM Sales for MineralsCo International (2025-06-30)"
+  },
+  {
+    "question": "What is the total amount of all cap table instruments?",
+    "expected_numbers": [8137.5],
+    "description": "Sum of all cap table amounts (3479.5 + 5675.0 + 1910.0)"
+  },
+  {
+    "question": "What is the latest net leverage for MineralsCo International?",
+    "expected_numbers": [2.1],
+    "description": "Latest LTM net leverage for MineralsCo International"
+  },
+  {
+    "question": "What is the latest interest coverage for Chemco Holdings?",
+    "expected_numbers": [4.8],
+    "description": "Latest LTM interest coverage for Chemco Holdings"
+  }
+]

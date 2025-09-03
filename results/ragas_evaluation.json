@@ -1,0 +1,647 @@
+{
+  "overall_metrics": {
+    "total_questions": 8,
+    "avg_numeric_recall": 0.4,
+    "avg_keyword_coverage": 0.5462797619047619,
+    "citation_rate": 0.875,
+    "avg_citation_count": 4.5,
+    "avg_answer_length": 422,
+    "ragas_metrics": {
+      "faithfulness": 0.22499999999999998,
+      "answer_relevancy": 0.6103104662338248,
+      "nv_context_relevance": 0.8125,
+      "context_recall": 0.84375,
+      "answer_correctness": 0.43610822855799225,
+      "answer_similarity": 0.8957202013683783
+    }
+  },
+  "question_type_metrics": {
+    "factual_lookup": {
+      "count": 1,
+      "numeric_recalls": [
+        1.0
+      ],
+      "keyword_coverages": [
+        0.6
+      ],
+      "citation_rates": [
+        1
+      ],
+      "ragas_scores": {
+        "reference": [],
+        "faithfulness": [
+          0.5
+        ],
+        "answer_relevancy": [
+          0.9978584270299392
+        ],
+        "nv_context_relevance": [
+          1.0
+        ],
+        "context_recall": [
+          1.0
+        ],
+        "answer_correctness": [
+          0.6130293445130589
+        ],
+        "answer_similarity": [
+          0.9521173780522356
+        ]
+      },
+      "avg_numeric_recall": 1.0,
+      "avg_keyword_coverage": 0.6,
+      "citation_rate": 1,
+      "avg_faithfulness": 0.5,
+      "avg_answer_relevancy": 0.9978584270299392,
+      "avg_nv_context_relevance": 1.0,
+      "avg_context_recall": 1.0,
+      "avg_answer_correctness": 0.6130293445130589,
+      "avg_answer_similarity": 0.9521173780522356
+    },
+    "analytical_advice": {
+      "count": 1,
+      "numeric_recalls": [],
+      "keyword_coverages": [
+        0.8571428571428571
+      ],
+      "citation_rates": [
+        1
+      ],
+      "ragas_scores": {
+        "reference": [],
+        "faithfulness": [
+          0.7
+        ],
+        "answer_relevancy": [
+          0.0
+        ],
+        "nv_context_relevance": [
+          0.5
+        ],
+        "context_recall": [
+          0.5
+        ],
+        "answer_correctness": [
+          0.7067592708727152
+        ],
+        "answer_similarity": [
+          0.9520370834908606
+        ]
+      },
+      "avg_keyword_coverage": 0.8571428571428571,
+      "citation_rate": 1,
+      "avg_faithfulness": 0.7,
+      "avg_answer_relevancy": 0.0,
+      "avg_nv_context_relevance": 0.5,
+      "avg_context_recall": 0.5,
+      "avg_answer_correctness": 0.7067592708727152,
+      "avg_answer_similarity": 0.9520370834908606
+    },
+    "analytical_framework": {
+      "count": 1,
+      "numeric_recalls": [],
+      "keyword_coverages": [
+        0.8
+      ],
+      "citation_rates": [
+        1
+      ],
+      "ragas_scores": {
+        "reference": [],
+        "faithfulness": [
+          0.0
+        ],
+        "answer_relevancy": [
+          0.9409821929396878
+        ],
+        "nv_context_relevance": [
+          0.5
+        ],
+        "context_recall": [
+          0.5
+        ],
+        "answer_correctness": [
+          0.34324927315939796
+        ],
+        "answer_similarity": [
+          0.9444256640661632
+        ]
+      },
+      "avg_keyword_coverage": 0.8,
+      "citation_rate": 1,
+      "avg_faithfulness": 0.0,
+      "avg_answer_relevancy": 0.9409821929396878,
+      "avg_nv_context_relevance": 0.5,
+      "avg_context_recall": 0.5,
+      "avg_answer_correctness": 0.34324927315939796,
+      "avg_answer_similarity": 0.9444256640661632
+    },
+    "aggregate_calculation": {
+      "count": 1,
+      "numeric_recalls": [
+        1.0
+      ],
+      "keyword_coverages": [
+        0.6666666666666666
+      ],
+      "citation_rates": [
+        1
+      ],
+      "ragas_scores": {
+        "reference": [],
+        "faithfulness": [
+          0.0
+        ],
+        "answer_relevancy": [
+          0.9999985544941933
+        ],
+        "nv_context_relevance": [
+          0.5
+        ],
+        "context_recall": [
+          1.0
+        ],
+        "answer_correctness": [
+          0.44982038728634716
+        ],
+        "answer_similarity": [
+          0.9421835328726067
+        ]
+      },
+      "avg_numeric_recall": 1.0,
+      "avg_keyword_coverage": 0.6666666666666666,
+      "citation_rate": 1,
+      "avg_faithfulness": 0.0,
+      "avg_answer_relevancy": 0.9999985544941933,
+      "avg_nv_context_relevance": 0.5,
+      "avg_context_recall": 1.0,
+      "avg_answer_correctness": 0.44982038728634716,
+      "avg_answer_similarity": 0.9421835328726067
+    },
+    "comparative_analysis": {
+      "count": 1,
+      "numeric_recalls": [
+        0.0
+      ],
+      "keyword_coverages": [
+        0.375
+      ],
+      "citation_rates": [
+        1
+      ],
+      "ragas_scores": {
+        "reference": [],
+        "faithfulness": [
+          0.0
+        ],
+        "answer_relevancy": [
+          0.9436445554067774
+        ],
+        "nv_context_relevance": [
+          1.0
+        ],
+        "context_recall": [
+          1.0
+        ],
+        "answer_correctness": [
+          0.21593901387496506
+        ],
+        "answer_similarity": [
+          0.8637560554998602
+        ]
+      },
+      "avg_numeric_recall": 0.0,
+      "avg_keyword_coverage": 0.375,
+      "citation_rate": 1,
+      "avg_faithfulness": 0.0,
+      "avg_answer_relevancy": 0.9436445554067774,
+      "avg_nv_context_relevance": 1.0,
+      "avg_context_recall": 1.0,
+      "avg_answer_correctness": 0.21593901387496506,
+      "avg_answer_similarity": 0.8637560554998602
+    },
+    "trend_analysis": {
+      "count": 1,
+      "numeric_recalls": [
+        0.0
+      ],
+      "keyword_coverages": [
+        0.5714285714285714
+      ],
+      "citation_rates": [
+        1
+      ],
+      "ragas_scores": {
+        "reference": [],
+        "faithfulness": [
+          0.6
+        ],
+        "answer_relevancy": [
+          1.0
+        ],
+        "nv_context_relevance": [
+          1.0
+        ],
+        "context_recall": [
+          0.75
+        ],
+        "answer_correctness": [
+          0.7726999868615164
+        ],
+        "answer_similarity": [
+          0.9617676893815498
+        ]
+      },
+      "avg_numeric_recall": 0.0,
+      "avg_keyword_coverage": 0.5714285714285714,
+      "citation_rate": 1,
+      "avg_faithfulness": 0.6,
+      "avg_answer_relevancy": 1.0,
+      "avg_nv_context_relevance": 1.0,
+      "avg_context_recall": 0.75,
+      "avg_answer_correctness": 0.7726999868615164,
+      "avg_answer_similarity": 0.9617676893815498
+    },
+    "ranking_analysis": {
+      "count": 1,
+      "numeric_recalls": [],
+      "keyword_coverages": [
+        0.0
+      ],
+      "citation_rates": [
+        0
+      ],
+      "ragas_scores": {
+        "reference": [],
+        "faithfulness": [
+          0.0
+        ],
+        "answer_relevancy": [
+          0.0
+        ],
+        "nv_context_relevance": [
+          1.0
+        ],
+        "context_recall": [
+          1.0
+        ],
+        "answer_correctness": [
+          0.17704790753211316
+        ],
+        "answer_similarity": [
+          0.7081916301284527
+        ]
+      },
+      "avg_keyword_coverage": 0.0,
+      "citation_rate": 0,
+      "avg_faithfulness": 0.0,
+      "avg_answer_relevancy": 0.0,
+      "avg_nv_context_relevance": 1.0,
+      "avg_context_recall": 1.0,
+      "avg_answer_correctness": 0.17704790753211316,
+      "avg_answer_similarity": 0.7081916301284527
+    },
+    "statistical_analysis": {
+      "count": 1,
+      "numeric_recalls": [
+        0.0
+      ],
+      "keyword_coverages": [
+        0.5
+      ],
+      "citation_rates": [
+        1
+      ],
+      "ragas_scores": {
+        "reference": [],
+        "faithfulness": [
+          0.0
+        ],
+        "answer_relevancy": [
+          0.0
+        ],
+        "nv_context_relevance": [
+          1.0
+        ],
+        "context_recall": [
+          1.0
+        ],
+        "answer_correctness": [
+          0.2103206443638242
+        ],
+        "answer_similarity": [
+          0.8412825774552968
+        ]
+      },
+      "avg_numeric_recall": 0.0,
+      "avg_keyword_coverage": 0.5,
+      "citation_rate": 1,
+      "avg_faithfulness": 0.0,
+      "avg_answer_relevancy": 0.0,
+      "avg_nv_context_relevance": 1.0,
+      "avg_context_recall": 1.0,
+      "avg_answer_correctness": 0.2103206443638242,
+      "avg_answer_similarity": 0.8412825774552968
+    }
+  },
+  "difficulty_metrics": {
+    "easy": {
+      "count": 2,
+      "keyword_coverages": [
+        0.6,
+        0.0
+      ],
+      "citation_rates": [
+        1,
+        0
+      ],
+      "avg_keyword_coverage": 0.3,
+      "citation_rate": 0.5
+    },
+    "medium": {
+      "count": 4,
+      "keyword_coverages": [
+        0.8571428571428571,
+        0.6666666666666666,
+        0.5714285714285714,
+        0.5
+      ],
+      "citation_rates": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "avg_keyword_coverage": 0.6488095238095237,
+      "citation_rate": 1
+    },
+    "hard": {
+      "count": 2,
+      "keyword_coverages": [
+        0.8,
+        0.375
+      ],
+      "citation_rates": [
+        1,
+        1
+      ],
+      "avg_keyword_coverage": 0.5875,
+      "citation_rate": 1
+    }
+  },
+  "category_metrics": {
+    "financial_metrics": {
+      "count": 5,
+      "keyword_coverages": [
+        0.6,
+        0.6666666666666666,
+        0.375,
+        0.0,
+        0.5
+      ],
+      "citation_rates": [
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      "avg_keyword_coverage": 0.42833333333333334,
+      "citation_rate": 0.8
+    },
+    "strategic_analysis": {
+      "count": 2,
+      "keyword_coverages": [
+        0.8571428571428571,
+        0.8
+      ],
+      "citation_rates": [
+        1,
+        1
+      ],
+      "avg_keyword_coverage": 0.8285714285714285,
+      "citation_rate": 1
+    },
+    "cash_flow_analysis": {
+      "count": 1,
+      "keyword_coverages": [
+        0.5714285714285714
+      ],
+      "citation_rates": [
+        1
+      ],
+      "avg_keyword_coverage": 0.5714285714285714,
+      "citation_rate": 1
+    }
+  },
+  "detailed_results": [
+    {
+      "question": "What's the latest revenue for Tronox?",
+      "question_type": "factual_lookup",
+      "difficulty": "easy",
+      "category": "financial_metrics",
+      "context": "Tronox is a company with financial data showing Sales metrics across different periods. The latest LTM period ending 2025-06-30 shows Sales of 2,949 USD millions.",
+      "ground_truth": "The latest revenue for Tronox is USD 2,949 million as of the LTM period ending June 30, 2025.",
+      "generated_answer": "The latest revenue for Tronox is USD 2,949 million [1].\n\nSources:\n[1] \u2192 /company_id/1/key_financials",
+      "traditional_metrics": {
+        "numeric_recall": 1.0,
+        "keyword_coverage": 0.6,
+        "citation_count": 2,
+        "has_citations": true,
+        "answer_length": 100,
+        "contains_expected_keywords": true
+      },
+      "ragas_metrics": {
+        "reference": "The latest revenue for Tronox is USD 2,949 million as of the LTM period ending June 30, 2025.",
+        "faithfulness": 0.5,
+        "answer_relevancy": 0.9978584270299392,
+        "nv_context_relevance": 1.0,
+        "context_recall": 1.0,
+        "answer_correctness": 0.6130293445130589,
+        "answer_similarity": 0.9521173780522356
+      }
+    },
+    {
+      "question": "How can Chemco deleverage?",
+      "question_type": "analytical_advice",
+      "difficulty": "medium",
+      "category": "strategic_analysis",
+      "context": "Chemco Holdings has significant debt including $2.2bn Term Loan B due 2030, $1.3bn Term Loan B due 2032, and other debt instruments. They have cash reserves of $705 million and various debt maturities.",
+      "ground_truth": "Chemco can deleverage by: 1) Using their $705 million cash to pay down debt, 2) Refinancing the $2.2bn Term Loan B due 2030 and $1.3bn Term Loan B due 2032 at better rates, 3) Managing the $120 million short-term debt and $500 million revolving credit facility, 4) Improving operational cash flow to reduce debt levels.",
+      "generated_answer": "Chemco Holdings can consider several strategies to deleverage based on its current financial instruments. The company has a total of USD 2,200 million in Term Loan B due 2030 and USD 1,300 million in Term Loan B due 2032, which are significant liabilities that could be targeted for repayment to reduce debt levels [1]. Additionally, Chemco has short-term debt amounting to USD 120 million and a revolving credit facility of USD 500 million due in 2028, which also represent opportunities for deleveraging [2]. \n\nFurthermore, Chemco's cash and cash equivalents stand at USD 705 million, which can be utilized to pay down some of these debts, thereby improving its leverage position [3]. \n\nSources:\n[1] \u2192 /company_id/2/cap_table  \n[2] \u2192 /company_id/2/cap_table  \n[3] \u2192 /company_id/2/cap_table  ",
+      "traditional_metrics": {
+        "numeric_recall": null,
+        "keyword_coverage": 0.8571428571428571,
+        "citation_count": 6,
+        "has_citations": true,
+        "answer_length": 793,
+        "contains_expected_keywords": true
+      },
+      "ragas_metrics": {
+        "reference": "Chemco can deleverage by: 1) Using their $705 million cash to pay down debt, 2) Refinancing the $2.2bn Term Loan B due 2030 and $1.3bn Term Loan B due 2032 at better rates, 3) Managing the $120 million short-term debt and $500 million revolving credit facility, 4) Improving operational cash flow to reduce debt levels.",
+        "faithfulness": 0.7,
+        "answer_relevancy": 0.0,
+        "nv_context_relevance": 0.5,
+        "context_recall": 0.5,
+        "answer_correctness": 0.7067592708727152,
+        "answer_similarity": 0.9520370834908606
+      }
+    },
+    {
+      "question": "Give me a swot analysis for mineralsco?",
+      "question_type": "analytical_framework",
+      "difficulty": "hard",
+      "category": "strategic_analysis",
+      "context": "MineralsCo International has sales of $1,920 million, EBITDA of $368 million, net debt of $760 million, and net leverage of 2.1x. They operate in the mining sector with various debt instruments and cash reserves.",
+      "ground_truth": "SWOT Analysis for MineralsCo International:\nStrengths: Strong sales performance ($1,920 million), solid EBITDA ($368 million), manageable net leverage (2.1x)\nWeaknesses: High debt levels ($760 million net debt), significant debt obligations\nOpportunities: Potential for operational improvements, market expansion in mining sector\nThreats: Economic downturns affecting mining demand, debt refinancing risks",
+      "generated_answer": "To provide a SWOT analysis for MineralsCo International based on the financial data:\n\n**Strengths:**\n- MineralsCo has a significant market capitalization of USD 1,150 million, indicating a strong market presence [1].\n- The company has a diverse debt structure, including a $500 million Term Loan B due 2029 and a $400 million Term Loan B due 2031, which can provide financial flexibility [2].\n\n**Weaknesses:**\n- The company has a net debt of USD 760 million, which could indicate a reliance on debt financing [3].\n- Cash and cash equivalents show a negative balance of USD 420 million, suggesting liquidity challenges [4].\n\n**Opportunities:**\n- The presence of a $150 million revolving credit facility due in 2028 provides an opportunity for additional liquidity if needed [5].\n- The company can leverage its gross secured debt of USD 980 million to potentially finance new projects or expansions [6].\n\n**Threats:**\n- The overall gross debt of USD 1,180 million poses a risk if market conditions change or if the company faces operational challenges [7].\n- The short-term debt of USD 60 million could create pressure on cash flow if not managed properly [8].\n\nSources:\n[1] \u2192 /company_id/1/cap_table_normalized  \n[2] \u2192 /company_id/1/cap_table_normalized  \n[3] \u2192 /company_id/1/cap_table_normalized  \n[4] \u2192 /company_id/1/cap_table_normalized  \n[5] \u2192 /company_id/1/cap_table_normalized  \n[6] \u2192 /company_id/1/cap_table_normalized  \n[7] \u2192 /company_id/1/cap_table_normalized  \n[8] \u2192 /company_id/1/cap_table_normalized  ",
+      "traditional_metrics": {
+        "numeric_recall": null,
+        "keyword_coverage": 0.8,
+        "citation_count": 16,
+        "has_citations": true,
+        "answer_length": 1512,
+        "contains_expected_keywords": true
+      },
+      "ragas_metrics": {
+        "reference": "SWOT Analysis for MineralsCo International:\nStrengths: Strong sales performance ($1,920 million), solid EBITDA ($368 million), manageable net leverage (2.1x)\nWeaknesses: High debt levels ($760 million net debt), significant debt obligations\nOpportunities: Potential for operational improvements, market expansion in mining sector\nThreats: Economic downturns affecting mining demand, debt refinancing risks",
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.9409821929396878,
+        "nv_context_relevance": 0.5,
+        "context_recall": 0.5,
+        "answer_correctness": 0.34324927315939796,
+        "answer_similarity": 0.9444256640661632
+      }
+    },
+    {
+      "question": "What is the total cap table amount across all instruments?",
+      "question_type": "aggregate_calculation",
+      "difficulty": "medium",
+      "category": "financial_metrics",
+      "context": "The cap table includes various debt instruments, equity, and cash positions across all three companies. Total amounts include secured debt, unsecured debt, cash reserves, and market capitalization.",
+      "ground_truth": "The total cap table amount across all instruments is USD 49,181 million, which includes all debt instruments, cash positions, and equity across the three companies.",
+      "generated_answer": "The total cap table amount across all instruments is USD 49,181 million [1].\n\nSources:\n[1] \u2192 /cap_table_normalized",
+      "traditional_metrics": {
+        "numeric_recall": 1.0,
+        "keyword_coverage": 0.6666666666666666,
+        "citation_count": 2,
+        "has_citations": true,
+        "answer_length": 114,
+        "contains_expected_keywords": true
+      },
+      "ragas_metrics": {
+        "reference": "The total cap table amount across all instruments is USD 49,181 million, which includes all debt instruments, cash positions, and equity across the three companies.",
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.9999985544941933,
+        "nv_context_relevance": 0.5,
+        "context_recall": 1.0,
+        "answer_correctness": 0.44982038728634716,
+        "answer_similarity": 0.9421835328726067
+      }
+    },
+    {
+      "question": "Compare the debt-to-EBITDA ratios for all companies",
+      "question_type": "comparative_analysis",
+      "difficulty": "hard",
+      "category": "financial_metrics",
+      "context": "Tronox has net debt of $2,950 million and EBITDA of $477 million. Chemco has net debt of $3,275 million and EBITDA of $742 million. MineralsCo has net debt of $760 million and EBITDA of $368 million.",
+      "ground_truth": "Debt-to-EBITDA ratios comparison:\n- Tronox: $2,950 million / $477 million = 6.18x\n- Chemco Holdings: $3,275 million / $742 million = 4.41x\n- MineralsCo International: $760 million / $368 million = 2.07x\nMineralsCo has the lowest leverage, followed by Chemco, with Tronox having the highest leverage ratio.",
+      "generated_answer": "The debt-to-EBITDA ratios for the companies are as follows: \n\n- Company ID 3 has a debt-to-EBITDA ratio of approximately 1.53 [1].\n- Company ID 1 has a debt-to-EBITDA ratio of approximately 2.18 [2].\n- Company ID 2 has a debt-to-EBITDA ratio of approximately 2.62 [3].\n\nSources:\n[1] \u2192 /company_id/3/cap_table_normalized  \n[2] \u2192 /company_id/1/cap_table_normalized  \n[3] \u2192 /company_id/2/cap_table_normalized  ",
+      "traditional_metrics": {
+        "numeric_recall": 0.0,
+        "keyword_coverage": 0.375,
+        "citation_count": 6,
+        "has_citations": true,
+        "answer_length": 407,
+        "contains_expected_keywords": true
+      },
+      "ragas_metrics": {
+        "reference": "Debt-to-EBITDA ratios comparison:\n- Tronox: $2,950 million / $477 million = 6.18x\n- Chemco Holdings: $3,275 million / $742 million = 4.41x\n- MineralsCo International: $760 million / $368 million = 2.07x\nMineralsCo has the lowest leverage, followed by Chemco, with Tronox having the highest leverage ratio.",
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.9436445554067774,
+        "nv_context_relevance": 1.0,
+        "context_recall": 1.0,
+        "answer_correctness": 0.21593901387496506,
+        "answer_similarity": 0.8637560554998602
+      }
+    },
+    {
+      "question": "What are the cash flow trends for Tronox over the last three periods?",
+      "question_type": "trend_analysis",
+      "difficulty": "medium",
+      "category": "cash_flow_analysis",
+      "context": "Tronox cash flow data shows: Operating activities: $184m (2023), $300m (2024), $165m (2025 LTM). Investing activities: -$255m (2023), -$343m (2024), -$383m (2025 LTM). Financing activities: $176m (2023), -$71m (2024), $148m (2025 LTM).",
+      "ground_truth": "Tronox cash flow trends over the last three periods:\nOperating Activities: $184m \u2192 $300m \u2192 $165m (peaked in 2024, declined in LTM)\nInvesting Activities: -$255m \u2192 -$343m \u2192 -$383m (increasing capital expenditure)\nFinancing Activities: $176m \u2192 -$71m \u2192 $148m (varied between debt issuance and repayment)\nNet result shows operational cash flow volatility and increasing investment needs.",
+      "generated_answer": "The cash flow trends for Tronox over the last three periods are not available, as the data returned indicates that there is no information regarding capital expenditures (Capex) [1].\n\nSources:\n[1] \u2192 /company_id/1/company_financials",
+      "traditional_metrics": {
+        "numeric_recall": 0.0,
+        "keyword_coverage": 0.5714285714285714,
+        "citation_count": 2,
+        "has_citations": true,
+        "answer_length": 231,
+        "contains_expected_keywords": true
+      },
+      "ragas_metrics": {
+        "reference": "Tronox cash flow trends over the last three periods:\nOperating Activities: $184m \u2192 $300m \u2192 $165m (peaked in 2024, declined in LTM)\nInvesting Activities: -$255m \u2192 -$343m \u2192 -$383m (increasing capital expenditure)\nFinancing Activities: $176m \u2192 -$71m \u2192 $148m (varied between debt issuance and repayment)\nNet result shows operational cash flow volatility and increasing investment needs.",
+        "faithfulness": 0.6,
+        "answer_relevancy": 1.0,
+        "nv_context_relevance": 1.0,
+        "context_recall": 0.75,
+        "answer_correctness": 0.7726999868615164,
+        "answer_similarity": 0.9617676893815498
+      }
+    },
+    {
+      "question": "Which company has the best interest coverage ratio?",
+      "question_type": "ranking_analysis",
+      "difficulty": "easy",
+      "category": "financial_metrics",
+      "context": "Interest coverage ratios: Tronox 2.9x (LTM), Chemco 4.8x (LTM), MineralsCo 6.8x (LTM). Higher ratios indicate better ability to cover interest payments.",
+      "ground_truth": "MineralsCo International has the best interest coverage ratio at 6.8x, followed by Chemco Holdings at 4.8x, and Tronox at 2.9x. This indicates MineralsCo has the strongest ability to cover interest payments from operating income.",
+      "generated_answer": "ERROR: (psycopg2.errors.UndefinedColumn) column cm.company does not exist\nLINE 1: SELECT cm.company_id, cm.company, MAX(cm.x_ebitda) AS intere...\n                              ^\nHINT:  Perhaps you meant to reference the column \"c.company\".\n\n[SQL: SELECT cm.company_id, cm.company, MAX(cm.x_ebitda) AS interest_coverage_ratio, 'x' AS unit\nFROM cap_table_normalized cm\nJOIN company_financials c ON cm.company_id = c.company_id\nGROUP BY cm.company_id, cm.company\nORDER BY interest_coverage_ratio DESC\nLIMIT 1;]\n(Background on this error at: https://sqlalche.me/e/20/f405)",
+      "traditional_metrics": {
+        "numeric_recall": null,
+        "keyword_coverage": 0.0,
+        "citation_count": 0,
+        "has_citations": false,
+        "answer_length": 0,
+        "contains_expected_keywords": false
+      },
+      "ragas_metrics": {
+        "reference": "MineralsCo International has the best interest coverage ratio at 6.8x, followed by Chemco Holdings at 4.8x, and Tronox at 2.9x. This indicates MineralsCo has the strongest ability to cover interest payments from operating income.",
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "nv_context_relevance": 1.0,
+        "context_recall": 1.0,
+        "answer_correctness": 0.17704790753211316,
+        "answer_similarity": 0.7081916301284527
+      }
+    },
+    {
+      "question": "What is the average gross profit margin across all companies?",
+      "question_type": "statistical_analysis",
+      "difficulty": "medium",
+      "category": "financial_metrics",
+      "context": "Gross profit margins: Tronox 14.3% (LTM), Chemco 19.0% (LTM), MineralsCo 30.0% (LTM).",
+      "ground_truth": "The average gross profit margin across all companies is 21.1% ((14.3% + 19.0% + 30.0%) / 3). MineralsCo has the highest margin at 30.0%, followed by Chemco at 19.0%, and Tronox at 14.3%.",
+      "generated_answer": "The average gross profit margin across all companies is not available, as the result returned was None, indicating that there may be no data for this metric [1]. \n\nSources:\n[1] \u2192 /company_id/financial_metrics_normalized",
+      "traditional_metrics": {
+        "numeric_recall": 0.0,
+        "keyword_coverage": 0.5,
+        "citation_count": 2,
+        "has_citations": true,
+        "answer_length": 219,
+        "contains_expected_keywords": true
+      },
+      "ragas_metrics": {
+        "reference": "The average gross profit margin across all companies is 21.1% ((14.3% + 19.0% + 30.0%) / 3). MineralsCo has the highest margin at 30.0%, followed by Chemco at 19.0%, and Tronox at 14.3%.",
+        "faithfulness": 0.0,
+        "answer_relevancy": 0.0,
+        "nv_context_relevance": 1.0,
+        "context_recall": 1.0,
+        "answer_correctness": 0.2103206443638242,
+        "answer_similarity": 0.8412825774552968
+      }
+    }
+  ]
+}

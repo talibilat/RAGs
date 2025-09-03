@@ -1,0 +1,21 @@
+[
+  {
+    "question": "What's the latest revenue for Tronox?",
+    "expected_numbers": [2949.0],
+    "expected_keywords": ["Tronox", "revenue", "sales"],
+    "question_type": "factual_lookup",
+    "description": "Latest revenue figure for Tronox company"
+  },
+  {
+    "question": "How can Chemco deleverage?",
+    "expected_keywords": ["Chemco", "deleverage", "debt", "leverage"],
+    "question_type": "analytical_advice",
+    "description": "Strategic advice on debt reduction for Chemco Holdings"
+  },
+  {
+    "question": "Give me a swot analysis for mineralsco?",
+    "expected_keywords": ["MineralsCo", "SWOT", "strengths", "weaknesses", "opportunities", "threats"],
+    "question_type": "analytical_framework",
+    "description": "SWOT analysis framework for MineralsCo International"
+  }
+]
