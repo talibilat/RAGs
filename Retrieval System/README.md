@@ -1,138 +1,218 @@
-# Retrieval System - Advanced Document Retrieval Framework
+# RAGs - Retrieval-Augmented Generation Projects
 
-A comprehensive retrieval system designed for efficient document search, similarity matching, and content discovery across large document collections.
+A comprehensive collection of advanced RAG (Retrieval-Augmented Generation) implementations showcasing different approaches, architectures, and use cases for building intelligent document processing and query systems.
 
-## 🏗️ Architecture
+## 🏗️ Project Overview
 
-This project implements a **sophisticated retrieval framework** with:
+This repository contains four distinct RAG implementations, each demonstrating different techniques and use cases:
 
-- **Multi-modal Retrieval**: Support for text, images, and structured data
-- **Advanced Indexing**: Efficient indexing strategies for large datasets
-- **Similarity Search**: Multiple similarity algorithms and metrics
-- **Query Processing**: Natural language query understanding and expansion
-- **Ranking Systems**: Advanced ranking and re-ranking algorithms
+- **SQLRAG**: SQL-based RAG for structured data analysis
+- **LocalRAG**: Document processing with local embeddings
+- **RagWithScraper**: Web scraping combined with RAG
+- **Retrieval System**: Advanced retrieval framework
 
-## 🚀 Features
+## 📁 Projects
 
-- **Vector Search**: High-performance vector similarity search
-- **Hybrid Retrieval**: Combine keyword and semantic search
-- **Query Expansion**: Automatic query enhancement and refinement
-- **Multi-language Support**: Cross-language document retrieval
-- **Real-time Indexing**: Dynamic document indexing and updates
-- **Scalable Architecture**: Handle millions of documents efficiently
+### 🗄️ [SQLRAG](./SQLRAG/) - SQL-based RAG Agent for Financial Data Analysis
+Function-based agent that generates PostgreSQL from natural language, executes it, and answers with inline sources. Specialized for financial data analysis with comprehensive evaluation framework.
 
-## 📁 Project Structure
+**Key Features:**
+- Natural Language → SQL → Answer Pipeline
+- PostgreSQL Integration with normalized financial data
+- RAGAS Evaluation Framework
+- Docker Containerization
+- Interactive CLI with Rich formatting
 
-```
-Retrieval System/
-├── src/                    # Source code
-│   ├── indexing/          # Document indexing modules
-│   ├── search/            # Search and retrieval logic
-│   ├── ranking/           # Ranking algorithms
-│   ├── embeddings/        # Embedding generation
-│   ├── preprocessing/     # Document preprocessing
-│   └── api/              # REST API endpoints
-├── data/                  # Document collections
-├── indexes/              # Search indexes
-├── config/               # Configuration files
-├── benchmarks/           # Performance benchmarks
-├── tests/                # Test suite
-├── requirements.txt      # Python dependencies
-└── README.md            # This file
-```
+**Technologies:** Python, PostgreSQL, OpenAI, LangChain, RAGAS, Docker
 
-## 🛠️ Technologies
+### 📚 [LocalRAG](./LocalRAG/) - Document Processing and Query System
+Full-stack application for uploading PDF documents, generating embeddings, and querying documents using natural language.
 
-- **Python**: Core programming language
-- **Elasticsearch**: Distributed search engine
-- **FAISS**: Vector similarity search
-- **Transformers**: Embedding models
-- **FastAPI**: API framework
-- **Redis**: Caching layer
-- **PostgreSQL**: Metadata storage
+**Key Features:**
+- PDF Upload and Text Extraction
+- Embeddings-Based Search
+- React Frontend with FastAPI Backend
+- Real-time Document Processing
+- Interactive Chat Interface
 
-## 🔧 Setup
+**Technologies:** Python, FastAPI, React, OpenAI, Sentence Transformers, Docker
 
-1. **Install Dependencies**:
+### 🌐 [RagWithScraper](./RagWithScraper/) - Web Scraper RAG
+RAG system that combines web scraping with retrieval capabilities to answer questions based on scraped web content.
+
+**Key Features:**
+- Multi-source Web Scraping
+- Content Preprocessing and Normalization
+- Vector Search and Similarity Matching
+- Real-time Querying
+- Source Attribution and Citation
+
+**Technologies:** Python, BeautifulSoup/Scrapy, OpenAI, Vector Databases, FastAPI
+
+### 🔍 [Retrieval System](./Retrieval%20System/) - Advanced Document Retrieval Framework
+Comprehensive retrieval system for efficient document search, similarity matching, and content discovery.
+
+**Key Features:**
+- Multi-modal Retrieval (text, images, structured data)
+- Advanced Indexing Strategies
+- Hybrid Search (semantic + keyword)
+- Scalable Architecture
+- Performance Benchmarks
+
+**Technologies:** Python, Elasticsearch, FAISS, Transformers, Redis, PostgreSQL
+
+## 🚀 Quick Start
+
+Each project has its own setup instructions. Navigate to the specific project folder for detailed documentation.
+
+### General Prerequisites
+- **Python 3.8+** (for most projects)
+- **Docker** (for containerized deployments)
+- **OpenAI API Key** (for most projects)
+- **PostgreSQL** (for SQLRAG)
+- **Node.js** (for LocalRAG frontend)
+
+### Environment Setup
+1. Clone the repository:
    ```bash
-   pip install -r requirements.txt
+   git clone https://github.com/talibilat/RAGs.git
+   cd RAGs
    ```
 
-2. **Start Services**:
+2. Set up environment variables:
    ```bash
-   # Start Elasticsearch
-   docker-compose up elasticsearch
+   # Copy example environment file
+   cp SQLRAG/.env.example .env
    
-   # Start Redis
-   docker-compose up redis
+   # Edit .env and add your API keys
+   nano .env
    ```
 
-3. **Initialize Indexes**:
-   ```bash
-   python src/indexing/init_indexes.py
-   ```
+3. Choose a project and follow its specific setup instructions.
 
-4. **Index Documents**:
-   ```bash
-   python src/indexing/index_documents.py --path /path/to/documents
-   ```
+## 📊 Project Comparison
 
-5. **Start API Server**:
-   ```bash
-   python src/api/main.py
-   ```
+| Project | Data Source | Embeddings | Search Type | Use Case |
+|---------|-------------|------------|-------------|----------|
+| **SQLRAG** | Structured (PostgreSQL) | OpenAI | SQL Generation | Financial Analysis |
+| **LocalRAG** | Documents (PDF) | OpenAI/Sentence Transformers | Semantic Search | Document Q&A |
+| **RagWithScraper** | Web Content | OpenAI | Vector Search | Web Research |
+| **Retrieval System** | Multi-modal | Multiple Models | Hybrid Search | Enterprise Search |
 
-## 🎯 Retrieval Methods
+## 🛠️ Common Technologies
 
-### **Semantic Search**
-- Dense vector embeddings
-- Transformer-based models
-- Cross-encoder re-ranking
+### Core Technologies
+- **Python 3.8+**: Primary programming language
+- **OpenAI API**: Embedding generation and text completion
+- **LangChain**: LLM application framework
+- **Docker**: Containerization
+- **FastAPI**: API framework
 
-### **Keyword Search**
-- BM25 algorithm
-- TF-IDF scoring
-- Query expansion
+### Vector Databases
+- **FAISS**: Vector similarity search
+- **Elasticsearch**: Distributed search engine
+- **PostgreSQL**: Relational database with vector extensions
 
-### **Hybrid Search**
-- Combine semantic and keyword search
-- Learned ranking models
-- Multi-stage retrieval
+### Frontend Technologies
+- **React**: Frontend framework
+- **Rich**: Terminal formatting
+- **Streamlit**: Rapid prototyping
 
-## 📊 Performance Metrics
+## 📈 Evaluation and Testing
 
-- **Recall@K**: Retrieval completeness
-- **Precision@K**: Retrieval accuracy
-- **MRR**: Mean Reciprocal Rank
-- **NDCG**: Normalized Discounted Cumulative Gain
-- **Latency**: Query response time
-- **Throughput**: Queries per second
+Each project includes comprehensive evaluation frameworks:
 
-## 🔍 Query Types
+- **RAGAS**: RAG evaluation metrics
+- **Custom Metrics**: Domain-specific evaluation
+- **Benchmarking**: Performance comparisons
+- **A/B Testing**: Model comparison
 
-- **Exact Match**: Precise keyword matching
-- **Semantic Search**: Meaning-based retrieval
-- **Fuzzy Search**: Approximate matching
-- **Faceted Search**: Multi-dimensional filtering
-- **Auto-complete**: Query suggestions
+## 🔧 Development
+
+### Project Structure
+```
+RAGs/
+├── SQLRAG/              # SQL-based RAG implementation
+├── LocalRAG/            # Document processing RAG
+├── RagWithScraper/      # Web scraping RAG
+├── Retrieval System/    # Advanced retrieval framework
+├── .gitignore          # Git ignore rules
+└── README.md           # This file
+```
+
+### Contributing
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature-name`
+3. Make your changes
+4. Add tests if applicable
+5. Commit your changes: `git commit -m 'Add feature'`
+6. Push to the branch: `git push origin feature-name`
+7. Open a Pull Request
+
+### Code Style
+- Follow PEP 8 for Python code
+- Use type hints where appropriate
+- Include docstrings for functions and classes
+- Write tests for new functionality
+
+## 📚 Documentation
+
+Each project contains detailed documentation:
+- **Setup Instructions**: Step-by-step installation
+- **API Documentation**: Endpoint specifications
+- **Architecture Diagrams**: System design
+- **Examples**: Usage examples and tutorials
 
 ## 🎯 Use Cases
 
-- **Enterprise Search**: Company-wide document discovery
-- **Academic Research**: Literature and paper search
-- **E-commerce**: Product search and recommendation
-- **Legal Discovery**: Case law and document search
-- **Customer Support**: Knowledge base search
+### SQLRAG
+- Financial data analysis
+- Business intelligence
+- Data exploration
+- Report generation
 
-## 📈 Benchmarks
+### LocalRAG
+- Document Q&A
+- Knowledge base search
+- Research assistance
+- Content analysis
 
-- **MS MARCO**: Passage ranking benchmark
-- **BEIR**: Benchmark for IR evaluation
-- **TREC**: Text retrieval conference datasets
-- **Custom Datasets**: Domain-specific evaluations
+### RagWithScraper
+- Web research
+- Content monitoring
+- Competitive intelligence
+- News analysis
+
+### Retrieval System
+- Enterprise search
+- Academic research
+- E-commerce search
+- Customer support
+
+## 🔒 Security
+
+- API keys are stored in environment variables
+- No sensitive data is committed to the repository
+- Docker containers run with minimal privileges
+- Input validation and sanitization
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🤝 Support
+
+For questions, issues, or contributions:
+- Open an issue on GitHub
+- Check the project-specific documentation
+- Review the examples and tutorials
+
+## 🙏 Acknowledgments
+
+- OpenAI for providing the GPT models
+- LangChain for the application framework
+- The open-source community for various libraries and tools
 
 ---
 
-**Note**: This project is currently under development. The actual implementation will be added based on specific requirements.
-
-This project is part of the RAGs repository collection.
+**Note**: This repository is actively maintained and updated. Check individual project READMEs for the most current information.

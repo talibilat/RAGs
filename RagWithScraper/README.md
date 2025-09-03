@@ -1,93 +1,233 @@
-# RagWithScraper - Web Scraper RAG System
+# RAG System with Web Scraper
 
-A Retrieval-Augmented Generation (RAG) system that combines web scraping with retrieval capabilities to answer questions based on scraped web content.
+A comprehensive Retrieval-Augmented Generation (RAG) system with web scraping capabilities for collecting, processing, and retrieving information for question answering.
 
-## 🏗️ Architecture
+## 📚 Features
 
-This project implements a **web scraping RAG system** with:
+- **Web Scraping**: Automatically crawl and extract content from websites
+- **Data Processing**: Transform raw content into structured Q&A pairs
+- **Vector Database**: Store embeddings in MongoDB for efficient retrieval
+- **RAG Pipeline**: Generate accurate answers based on retrieved context
+- **Evaluation System**: Assess the quality of generated responses
+- **REST API**: Expose functionalities through a FastAPI backend
+- **Frontend Interface**: User-friendly interface for interacting with the system
 
-- **Web Scraping**: Extract content from web pages
-- **Content Processing**: Clean and structure scraped data
-- **Embeddings Generation**: Create vector representations of content
-- **Retrieval System**: Find relevant content for queries
-- **Answer Generation**: Generate answers based on retrieved content
+## 🛠️ System Architecture
 
-## 🚀 Features
+The system consists of two main components:
 
-- **Multi-source Web Scraping**: Extract content from various web sources
-- **Content Preprocessing**: Clean and normalize scraped text
-- **Vector Search**: Efficient similarity search through scraped content
-- **Real-time Querying**: Ask questions about scraped web content
-- **Source Attribution**: Track and cite original web sources
+1. **Backend (Python/FastAPI)**: Handles web scraping, data processing, vector storage, and RAG generation
+2. **Frontend (Next.js)**: Provides user interface for asking questions and viewing answers
 
-## 📁 Project Structure
+## 🔧 Setup Instructions
+
+### Prerequisites
+
+- Python 3.10+
+- Node.js 18+
+- MongoDB Atlas account (for vector storage)
+- Docker and Docker Compose (optional, for containerized deployment)
+- API keys for:
+  - OpenAI
+  - HuggingFace (optional, for alternative embeddings)
+  - ScrapFly (for web scraping)
+  - FireCrawl (for web crawling)
+
+### Environment Variables
+
+Create a `.env` file in the root directory with the following variables:
 
 ```
-RagWithScraper/
-├── src/                    # Source code
-│   ├── scraper/           # Web scraping modules
-│   ├── processor/         # Content processing
-│   ├── embeddings/        # Embedding generation
-│   ├── retrieval/         # Retrieval system
-│   └── api/              # API endpoints
-├── data/                  # Scraped data storage
-├── config/               # Configuration files
-├── tests/                # Test suite
-├── requirements.txt      # Python dependencies
-└── README.md            # This file
+# OpenAI API Configuration
+OPENAI_API_KEY='your-openai-api-key'
+OPENAI_MODEL='gpt-4o'
+OPENAI_EMBEDDING_MODEL='text-embedding-ada-002'
+
+# MongoDB Configuration
+MONGODB_URI='your-mongodb-connection-string'
+MONGODB_DATABASE='manual'
+MONGODB_COLLECTION_FAQS='faqs_regex'
+MONGODB_VECTOR_INDEX_HF='faqSemanticSearch'
+MONGODB_VECTOR_INDEX_OPENAI='faqOpenAISemanticSeachRegex'
+MONGODB_VECTOR_NUM_CANDIDATES=100
+
+# API Configuration
+API_HOST=0.0.0.0
+API_PORT=8000
+
+# HuggingFace Configuration
+HUGGING_FACE_API='your-huggingface-api-key'
+
+# Data Paths
+DATA_DIR='data'
+PAGES_DIR='data/pages'
+FAQS_DIR='data/faqs'
+CSV_FILENAME='faqs_regex.csv'
+
+# Web Scraping Configuration
+NEXT_PUBLIC_API_URL=http://localhost:8000
+BASE_URL="https://your-target-website.com"
+SCRAPFLY_API_KEY='your-scrapfly-api-key'
+FIRECRAWL_API_KEY='your-firecrawl-api-key'
 ```
 
-## 🛠️ Technologies
+### API Keys Setup
 
-- **Python**: Core programming language
-- **BeautifulSoup/Scrapy**: Web scraping
-- **OpenAI/Transformers**: Embedding generation
-- **Vector Database**: Content storage and retrieval
-- **FastAPI**: API framework
-- **React**: Frontend interface (optional)
+1. **OpenAI API Key**: 
+   - Sign up at [OpenAI](https://platform.openai.com/)
+   - Create an API key in your account dashboard
+   - Add to .env file as `OPENAI_API_KEY`
 
-## 🔧 Setup
+2. **MongoDB Atlas**:
+   - Create an account on [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
+   - Set up a new cluster
+   - Create a database user
+   - Get your connection string and add to .env as `MONGODB_URI`
+   - Set up vector search indexes in your collection
 
-1. **Install Dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
+3. **HuggingFace API Key** (optional):
+   - Create an account on [HuggingFace](https://huggingface.co/)
+   - Generate an API key
+   - Add to .env file as `HUGGING_FACE_API`
 
-2. **Configure Scraping Targets**:
-   Edit `config/scraping_config.yaml` to specify target websites
+4. **ScrapFly API Key**:
+   - Sign up at [ScrapFly](https://scrapfly.io/)
+   - Generate an API key
+   - Add to .env file as `SCRAPFLY_API_KEY`
 
-3. **Set API Keys**:
-   ```bash
-   export OPENAI_API_KEY=your_api_key
-   ```
+5. **FireCrawl API Key**:
+   - Sign up at [FireCrawl](https://firecrawl.dev/)
+   - Generate an API key
+   - Add to .env file as `FIRECRAWL_API_KEY`
 
-4. **Run Scraper**:
-   ```bash
-   python src/scraper/main.py
-   ```
+### Installation
 
-5. **Start API Server**:
-   ```bash
-   python src/api/main.py
-   ```
+#### Method 1: Local Setup
 
-## 🎯 Use Cases
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd RagWithScraper
+```
 
-- **Research Assistant**: Scrape and query research papers
-- **News Analysis**: Extract and analyze news articles
-- **Documentation Search**: Scrape and search technical documentation
-- **Competitive Intelligence**: Monitor competitor websites
-- **Content Curation**: Aggregate and search web content
+2. Set up backend:
+```bash
+cd backend
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+```
 
-## 📊 Evaluation
+3. Set up frontend:
+```bash
+cd ../frontend
+npm install
+```
 
-- **Scraping Accuracy**: Measure content extraction quality
-- **Retrieval Performance**: Evaluate search relevance
-- **Answer Quality**: Assess generated response accuracy
-- **Source Attribution**: Verify proper citation of sources
+#### Method 2: Docker Compose
 
----
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd RagWithScraper
+```
 
-**Note**: This project is currently under development. The actual implementation will be added based on specific requirements.
+2. Start the services:
+```bash
+docker-compose up -d
+```
 
-This project is part of the RAGs repository collection.
+## 🚀 Usage
+
+### Running the System
+
+#### Local Development
+
+1. Start the backend:
+```bash
+cd backend
+python main.py
+```
+
+2. Start the frontend:
+```bash
+cd frontend
+npm run dev
+```
+
+3. Access the web interface at http://localhost:3000
+
+#### Docker Deployment
+
+```bash
+docker-compose up -d
+```
+
+Access the web interface at http://localhost:3000
+
+### Web Scraping Pipeline
+
+To scrape a website and process the data:
+
+1. Configure the target website in the `.env` file
+2. Run the scraping script:
+```bash
+cd backend
+python -m src.extract_data.fire_crawler
+```
+
+3. Process the scraped data:
+```bash
+python -m src.process_raw_data.extract_faq_from_content
+python -m src.process_raw_data.generate_dataset_using_regex
+python -m src.process_raw_data.save_faq_to_csv
+```
+
+4. Create embeddings and store in MongoDB:
+```bash
+python -m src.retrieval.create_embeddings
+python -m src.retrieval.insert_doc_in_db
+```
+
+## 📁 Directory Structure
+
+### Backend
+
+- `backend/`
+  - `src/`
+    - `evaluation/`: Response evaluation metrics and scoring
+    - `extract_data/`: Web scraping and content extraction
+    - `generation/`: Answer generation using RAG
+    - `process_raw_data/`: Transform raw content into structured data
+    - `retrieval/`: Vector search and document retrieval
+    - `utils/`: Utility functions for embedding, logging, etc.
+  - `main.py`: FastAPI application
+  - `requirements.txt`: Python dependencies
+
+### Frontend
+
+- `frontend/`
+  - `components/`: React components
+  - `pages/`: Next.js pages
+  - `public/`: Static assets
+  - `styles/`: CSS styles
+  - `package.json`: Node.js dependencies
+
+## 🧪 Evaluation
+
+The system includes comprehensive evaluation metrics:
+
+- Semantic similarity scoring
+- LLM-based evaluation of factual accuracy, relevance, completeness
+- Context relevancy assessment
+- Overall confidence scoring
+
+## 📝 License
+
+[Specify your license here]
+
+## 🙏 Acknowledgements
+
+- OpenAI for the language models
+- MongoDB for vector storage
+- ScrapFly and FireCrawl for web scraping capabilities 

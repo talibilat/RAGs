@@ -86,22 +86,6 @@ dmypy.json
 # Pyre
 .pyre/
 
-# Node.js
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-lerna-debug.log*
-.npm
-.eslintcache
-.rpt2_cache/
-.rts2_cache_cjs/
-.rts2_cache_es/
-.rts2_cache_umd/
-.node_repl_history
-*.tgz
-.yarn-integrity
-
 # Environment files
 .env
 .env.test
@@ -115,10 +99,6 @@ lerna-debug.log*
 build/
 dist/
 out/
-.next/
-.nuxt/
-.cache/
-.parcel-cache/
 
 # Logs
 logs/
@@ -177,3 +157,7 @@ uploads/
 downloads/
 cache/
 results/
+
+# SQLRAG specific
+*.sql
+*.dump
