@@ -18,7 +18,7 @@ from ragas.metrics import (
     answer_similarity
 )
 
-from ..chat_sql import answer_question
+from agent.chat_sql import answer_question
 
 
 logger = logging.getLogger(__name__)

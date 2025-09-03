@@ -5,7 +5,6 @@ from __future__ import annotations
 Per project requirements, classes are only used here for DB models and
 the typed response container used by the LLM structured output.
 """
-import os
 from sqlalchemy import (
     Column,
     Integer,
@@ -18,17 +17,6 @@ from sqlalchemy import (
 )
 from sqlalchemy.orm import declarative_base
 from pydantic import BaseModel, Field
-
-
-DATABASE_HOSTNAME = os.getenv("DATABASE_HOSTNAME", "localhost")
-DATABASE_PORT = os.getenv("DATABASE_PORT", "5432")
-DATABASE_NAME = os.getenv("DATABASE_NAME", "9fin")
-DATABASE_USERNAME = os.getenv("DATABASE_USERNAME", "postgres")
-DATABASE_PASSWORD = os.getenv("DATABASE_PASSWORD", "password")
-
-DATABASE_URL = (
-    f"postgresql+psycopg2://{DATABASE_USERNAME}:{DATABASE_PASSWORD}@{DATABASE_HOSTNAME}:{DATABASE_PORT}/{DATABASE_NAME}"
-)
 
 Base = declarative_base()
 

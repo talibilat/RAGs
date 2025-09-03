@@ -6,7 +6,7 @@ import argparse
 import re
 from statistics import mean
 
-from ..chat_sql import answer_question
+from agent.chat_sql import answer_question
 
 
 def extract_numbers(text: str):

@@ -1,42 +1,37 @@
 
-.PHONY: build run run-local test eval load up-db validate dev-setup clean logs up down
+.PHONY: test eval validate setup clean run
 
-build:
-	docker build -t ai-agent .
-
-run:
-	docker compose up --build ai-agent
-
-run-local:
-	PYTHONPATH=src python -m agent.chat_cli chat
-
+# Main commands for automated testing and evaluation
 test:
 	PYTHONPATH=src pytest -q
 
 eval:
-	PYTHONPATH=src python -m agent.eval.ragas_evaluate --examples examples/comprehensive_eval_dataset.json --verbose --output results/ragas_evaluation.json
+	PYTHONPATH=src python -m eval.ragas_evaluate --examples examples/comprehensive_eval_dataset.json --verbose --output results/ragas_evaluation.json
 
 validate:
-	PYTHONPATH=src python -m agent.eval.evaluate --examples examples/validation_set.json
+	PYTHONPATH=src python -m eval.evaluate --examples examples/validation_set.json
 
-load:
-	PYTHONPATH=src python -m agent.data_loader
-
-up-db:
+# Setup and run commands
+setup:
+	@echo "Setting up development environment..."
 	docker compose up -d postgres
+	@echo "Waiting for database to be ready..."
+	@until docker exec postgres pg_isready -U postgres -d 9fin; do \
+		echo "Database not ready yet, waiting..."; \
+		sleep 2; \
+	done
+	@echo "Loading sample data..."
+	PYTHONPATH=src python -m agent.data_loader
+	@echo "Setup complete!"
 
-dev-setup: up-db load
-	@echo "Development environment ready! Run 'make logs' to see database logs."
+run:
+	@echo "Running automated evaluation..."
+	docker compose build --no-cache ai-agent
+	@echo "Starting interactive chat..."
+	PYTHONPATH=src python -m agent.chat_cli chat
+	
 
+# Cleanup
 clean:
 	docker compose down -v
 	docker rmi ai-agent 2>/dev/null || true
-
-logs:
-	docker compose logs -f postgres
-
-up:
-	docker compose up --build
-
-down:
-	docker compose down

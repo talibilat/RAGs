@@ -4,11 +4,14 @@ A sophisticated Retrieval-Augmented Generation (RAG) system that converts natura
 
 ## 🏗️ Architecture
 
-This project implements a **function-based architecture** with clear separation of concerns:
+This project implements a **modular architecture** with clear separation of concerns:
 
+- **Core Module** (`src/core/`): Database, configuration, monitoring, and utilities
+- **Agent Module** (`src/agent/`): Chat interface, SQL generation, and data loading
+- **Evaluation Module** (`src/eval/`): RAGAS evaluation framework and testing
 - **Natural Language → SQL → Answer Pipeline**
-- **PostgreSQL Integration** with normalized financial data
-- **RAGAS Evaluation Framework** for comprehensive testing
+- **PostgreSQL Integration** with normalized financial data and connection pooling
+- **Production-Ready Monitoring** with health checks and graceful shutdown
 - **Docker Containerization** with docker-compose
 - **Interactive CLI** with Rich formatting
 
@@ -16,36 +19,41 @@ This project implements a **function-based architecture** with clear separation 
 
 ### Prerequisites
 - Docker and Python 3.12
-- Environment variables (see `.env.example`):
+- Environment variables (see `env.example`):
   - `DATABASE_HOSTNAME`, `DATABASE_PORT`, `DATABASE_NAME`, `DATABASE_USERNAME`, `DATABASE_PASSWORD`
   - `OPENAI_API_KEY`, `OPENAI_MODEL`
+
+**Important**: You must create a `.env` file from `env.example` before running any commands.
 
 ### Setup
 ```bash
 # 1. Copy environment file and set your OpenAI API key
-cp .env.example .env
+cp env.example .env
 # Edit .env and add your OPENAI_API_KEY
 
 # 2. Set up development environment (starts postgres and loads data)
-make dev-setup
+make setup
 
-# 3. Start the chat interface
-make run
+# 3. Run evaluation and start interactive chat
+make eval
 ```
 
-### Manual Setup
+### Manual Testing
 ```bash
-# Start Postgres
-make up-db
+# Run tests locally
+make test
 
-# Install dependencies
-pip install -r requirements.txt
+# Run validation tests
+make validate
 
-# Load sample data into Postgres
-make load
+# Run RAGAS evaluation (followed by interactive chat)
+make eval
 
-# Chat CLI (local development)
-PYTHONPATH=src python -m agent.chat_cli chat
+# Start interactive chat only
+make chat
+
+# Start interactive chat in Docker
+make run
 ```
 
 ## 📊 Features
@@ -53,8 +61,9 @@ PYTHONPATH=src python -m agent.chat_cli chat
 ### Core Functionality
 - **Natural Language to SQL**: Convert questions like "What's the latest revenue for each company?" into SQL queries
 - **Financial Data Analysis**: Specialized for financial metrics, cap tables, and company data
-- **Interactive Chat Interface**: Rich CLI with syntax highlighting and error handling
-- **Comprehensive Evaluation**: RAGAS metrics for quality assessment
+- **Interactive Chat Interface**: Rich CLI with Typer framework, syntax highlighting and error handling
+- **Health Monitoring**: Built-in health checks for system status and database connectivity
+- **Comprehensive Evaluation**: RAGAS metrics for quality assessment with detailed analytics
 
 ### Data Pipeline
 1. **ETL Process**: JSON financial data → PostgreSQL normalized tables
@@ -62,46 +71,79 @@ PYTHONPATH=src python -m agent.chat_cli chat
 3. **Query Optimization**: Intelligent SQL generation with error handling
 4. **Result Formatting**: Rich console output with tables and charts
 
+### Production Features
+- **Connection Pooling**: Optimized database connections with configurable pool size
+- **Health Monitoring**: System health checks for database and configuration
+- **Graceful Shutdown**: Proper cleanup of resources on termination
+- **Performance Monitoring**: Query performance tracking and slow query detection
+- **Error Handling**: Comprehensive error handling with detailed logging
+- **Configuration Management**: Environment-based configuration with validation
+
 ## 🛠️ Development
 
 ### Available Commands
 ```bash
-# Development workflow
-make dev-setup    # Quick setup (postgres + data loading)
-make test         # Run test suite
-make eval         # Run comprehensive RAGAS evaluation
-make validate     # Run validation tests
-
-# Docker commands
-make up           # Run full stack (postgres + ai-agent)
-make run          # Run only AI agent
-make run-local    # Run locally without Docker
-make logs         # View logs
-make down         # Stop services
+# Main workflow
+make setup        # Set up development environment (postgres + data loading)
+make eval         # Run RAGAS evaluation + start interactive chat
+make chat         # Start interactive chat only
+make run          # Start interactive chat in Docker
+make test         # Run test suite locally
+make validate     # Run validation tests locally
 make clean        # Clean up (removes volumes and images)
 ```
 
 ### Project Structure
 ```
 SQLRAG/
-├── src/agent/           # Core agent implementation
-│   ├── chat_cli.py     # Interactive CLI interface
-│   ├── chat_sql.py     # SQL generation and execution
-│   ├── data_loader.py  # ETL and data management
-│   ├── models.py       # Data models and schemas
-│   ├── prompts.py      # LLM prompts and templates
-│   ├── utils.py        # Utility functions
-│   ├── validation.py   # Data validation
-│   └── eval/           # Evaluation framework
-├── examples/           # Sample data and test cases
-├── docs/              # Documentation
-├── tests/             # Test suite
-├── results/           # Evaluation results
-├── Dockerfile         # Container configuration
-├── docker-compose.yml # Multi-service setup
-├── Makefile          # Development commands
-└── requirements.txt   # Python dependencies
+├── src/
+│   ├── core/              # Core infrastructure
+│   │   ├── config.py      # Configuration management with Pydantic
+│   │   ├── database.py    # Database connection pooling and optimization
+│   │   ├── models.py      # SQLAlchemy ORM models and Pydantic schemas
+│   │   ├── monitoring.py  # Health checks and graceful shutdown
+│   │   ├── utils.py       # Utility functions
+│   │   └── validation.py  # Data validation
+│   ├── agent/             # Agent implementation
+│   │   ├── chat_cli.py    # Interactive CLI interface with Typer
+│   │   ├── chat_sql.py    # SQL generation and execution
+│   │   ├── data_loader.py # ETL and data management
+│   │   ├── config.py      # Agent-specific configuration
+│   │   └── prompts.py     # LLM prompts and templates
+│   └── eval/              # Evaluation framework
+│       ├── ragas_evaluate.py    # RAGAS evaluation with comprehensive metrics
+│       ├── evaluate.py          # Traditional evaluation methods
+│       └── enhanced_evaluate.py # Enhanced evaluation features
+├── examples/             # Sample data and test cases
+├── docs/                # Documentation
+├── tests/               # Test suite
+├── results/             # Evaluation results
+├── Dockerfile           # Container configuration
+├── docker-compose.yml   # Multi-service setup
+├── Makefile            # Development commands
+├── env.example         # Environment configuration template
+└── requirements.txt     # Python dependencies
 ```
+
+## 🏛️ Modular Architecture
+
+### Core Module (`src/core/`)
+- **Configuration Management**: Pydantic-based settings with environment variable support
+- **Database Layer**: Connection pooling, health checks, and performance optimization
+- **Monitoring**: System health checks, graceful shutdown, and performance metrics
+- **Models**: SQLAlchemy ORM models and Pydantic schemas for type safety
+- **Utilities**: Common helper functions and SQL sanitization
+
+### Agent Module (`src/agent/`)
+- **Chat Interface**: Interactive CLI with Typer framework and Rich formatting
+- **SQL Generation**: Natural language to SQL conversion with error handling
+- **Data Loading**: ETL pipeline for financial data normalization
+- **Prompts**: LLM prompt templates and conversation management
+
+### Evaluation Module (`src/eval/`)
+- **RAGAS Integration**: Comprehensive evaluation with multiple metrics
+- **Traditional Metrics**: Numeric recall, keyword coverage, and citation analysis
+- **Performance Analysis**: Question type, difficulty, and category breakdowns
 
 ## 📈 Evaluation
 
@@ -110,6 +152,8 @@ SQLRAG/
 - **Answer Relevancy**: Quality of the final answers
 - **Context Precision**: Relevance of retrieved context
 - **Context Recall**: Completeness of retrieved information
+- **Answer Correctness**: Accuracy of generated responses
+- **Answer Similarity**: Semantic similarity to ground truth
 
 ### Test Datasets
 - **`comprehensive_eval_dataset.json`**: Multi-difficulty questions with ground truth
@@ -128,21 +172,25 @@ DATABASE_PASSWORD=password
 
 # OpenAI Configuration
 OPENAI_API_KEY=your_api_key_here
-OPENAI_MODEL=gpt-4.1-mini
+OPENAI_MODEL=gpt-4o-mini
 
-# Agent Configuration
+# Application Configuration
+LOG_LEVEL=INFO
+DATA_PATH=financial_data.json
 AGENT_OFFLINE_MODE=false
 FEATURE_AGENT_ENABLED=false
 
-# Data Configuration
-DATA_PATH=financial_data.json
+# Performance Configuration
+DB_MAX_CONNECTIONS=20
+DB_CONNECTION_TIMEOUT=30
+QUERY_TIMEOUT=60
 ```
 
 ## 📚 Documentation
 
-- **`PROJECT_FLOW_DIAGRAM.md`**: Complete system architecture and data flow
 - **`docs/EVALUATION_FRAMEWORK.md`**: Evaluation methodology and metrics
 - **`docs/RAGAS_EVALUATION_SUMMARY.md`**: Performance analysis and results
+- **`env.example`**: Environment configuration template
 
 ## 🤝 Contributing
 

@@ -8,7 +8,7 @@ from statistics import mean
 from typing import List, Dict, Any, Optional
 from dataclasses import dataclass
 
-from ..chat_sql import answer_question
+from agent.chat_sql import answer_question
 
 logger = logging.getLogger(__name__)
 

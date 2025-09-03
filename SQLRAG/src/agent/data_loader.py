@@ -1,5 +1,5 @@
 from __future__ import annotations
-"""ETL utilities for loading JSON 9fin financials into PostgreSQL.
+"""ETL utilities for loading JSON 9fin financials into PostgreSQL with performance optimizations.
 
 This module provides a simple Extract-Transform-Load pipeline:
 - create_schema: ensures DB extensions and tables exist
@@ -13,30 +13,24 @@ function-based for clarity and testability.
 import os
 import json
 import datetime
+import logging
 from typing import Dict, Any
+from sqlalchemy import text
 
-from sqlalchemy import create_engine, text
-from sqlalchemy.orm import sessionmaker
+from core.models import Base, CompanyFinancials, FinancialMetricsNormalized, CapTableNormalized
+from core.database import get_engine, get_db_session, optimize_database_connections
+from core.config import settings
 
-from .models import (
-    Base,
-    CompanyFinancials,
-    FinancialMetricsNormalized,
-    CapTableNormalized,
-    DATABASE_URL,
-)
+logger = logging.getLogger(__name__)
 
 
-def get_engine():
-    """Create a SQLAlchemy engine using environment-based URL."""
-    return create_engine(DATABASE_URL, echo=False, future=True)
-
-
-def create_schema(engine):
+def create_schema():
     """Create required DB extension and all ORM tables if missing."""
+    engine = get_engine()
     with engine.connect() as conn:
         conn.execute(text("CREATE EXTENSION IF NOT EXISTS pgcrypto"))
     Base.metadata.create_all(engine)
+    logger.info("Database schema created/verified")
 
 
 def load_json(path: str) -> Dict[str, Any]:
@@ -145,18 +139,35 @@ def normalize_cap_table(session, company_record: Dict[str, Any]):
 
 def main():
     """Entry point for running the ETL from the command line."""
-    engine = get_engine()
-    create_schema(engine)
-    Session = sessionmaker(bind=engine, future=True)
-    data_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "financial_data.json")
+    logger.info("Starting ETL process")
+    
+    # Create schema and optimize database
+    create_schema()
+    optimize_database_connections()
+    
+    # Load data
+    data_path = settings.data_path
+    if not os.path.isabs(data_path):
+        data_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), data_path)
+    
     data = load_json(data_path)
+    logger.info(f"Loaded {len(data['company_financials'])} company records")
 
-    with Session() as session:
-        for company_record in data["company_financials"]:
-            upsert_company_financials(session, company_record)
-            normalize_metrics(session, company_record)
-            normalize_cap_table(session, company_record)
-        session.commit()
+    with get_db_session() as session:
+        for i, company_record in enumerate(data["company_financials"], 1):
+            try:
+                upsert_company_financials(session, company_record)
+                normalize_metrics(session, company_record)
+                normalize_cap_table(session, company_record)
+                
+                if i % 10 == 0:  # Log progress every 10 records
+                    logger.info(f"Processed {i}/{len(data['company_financials'])} companies")
+                    
+            except Exception as e:
+                logger.error(f"Error processing company {company_record.get('company_id', 'unknown')}: {e}")
+                raise
+    
+    logger.info("ETL process completed successfully")
 
 
 if __name__ == "__main__":

@@ -11,6 +11,8 @@ sql_query_prompt = ChatPromptTemplate.from_messages(
                 """You are a PostgreSQL expert. Analyse what the user is asking and what information is needed to answer the question.
                 Then generate ONE runnable PostgreSQL SQL query using ONLY the provided schema. Do not include markdown fences or commentary.
                 
+                IMPORTANT: If the question seems too broad (asking for "all" data), automatically add a LIMIT clause to prevent large result sets. Focus on the most relevant/recent data.
+                
                 Requirements for every query:
                 - Only include source_url columns when the corresponding table is selected AND when NOT using aggregate functions:
                   - If selecting from financial_metrics_normalized, include f.source_url AS source_url_f.
@@ -24,7 +26,9 @@ sql_query_prompt = ChatPromptTemplate.from_messages(
                   - If selecting percentages from cm.percent_cap, return '%' AS unit.
                   - If selecting ratios from cm.x_ebitda, return 'x' AS unit.
                   - Otherwise return NULL AS unit.
-                - Select only columns necessary to answer the question plus allowed source_url columns and unit.
+                - CRITICAL: When using aggregate functions (COUNT, SUM, MAX, MIN, AVG), do NOT include f.unit in SELECT as it would require GROUP BY f.unit. Instead, use a literal string like 'USDm' AS unit or NULL AS unit.
+                - Select only columns necessary to answer the question plus allowed source_url columns and unit.Hello
+
                   - For aggregate questions (e.g., COUNT, SUM, MAX, MIN, AVG), do NOT include identifier columns such as c.company_id unless explicitly requested by the question.
                   - For aggregate questions, do NOT include source_url columns as they would require GROUP BY clauses.
                   - Avoid selecting large JSON columns like c.periods, c.key_financials, c.cash_flow_and_leverage, c.cap_table unless explicitly requested.
@@ -56,10 +60,12 @@ generation_answer_prompt = ChatPromptTemplate.from_messages(
                         - A SQL query
                         - A SQL result
                         
-                        Your task is to **answer the user’s question** using only the SQL result.  
+                        Your task is to **answer the user's question** using only the SQL result.  
                         Each sentence in your answer that is based on the result must include a **source reference** in the form [1][2][3] etc.  
                         You may reuse the same reference number if the same source supports multiple sentences.  
                         At the end of the answer, explicitly state which number corresponds to which source.  
+                        
+                        IMPORTANT: If the SQL result is very large (more than 20 rows) or the question seems too broad, provide a summary/gist instead of all details. Mention that this is a summary because the full dataset is large, and ask the user to be more specific for detailed information.
                         
                         Format strictly as shown in the examples.
                         
