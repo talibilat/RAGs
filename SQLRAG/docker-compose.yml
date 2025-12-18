@@ -1,49 +1,46 @@
+version: '3.8'
+
 services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app/backend
+    env_file:
+      - backend/.env
+    environment:
+      - DATABASE_URL=postgresql+psycopg2://postgres:password@postgres:5432/${DATABASE_NAME:-sqlrag}
+    depends_on:
+      - postgres
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+      - /app/.next
+    environment:
+      - NEXT_PUBLIC_API_BASE=http://localhost:8000
+    depends_on:
+      - backend
 
   postgres:
-    image: postgres:16
-    container_name: postgres
+    image: postgres:15
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=password
-      - POSTGRES_DB=9fin
+      - POSTGRES_DB=sqlrag
     ports:
       - "5432:5432"
     volumes:
-      - postgres-db:/var/lib/postgresql/data
-    restart: unless-stopped
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-
-  ai-agent:
-    build: .
-    container_name: ai-agent
-    depends_on:
-      postgres:
-        condition: service_healthy
-    environment:
-      - DATABASE_HOSTNAME=postgres
-      - DATABASE_PORT=5432
-      - DATABASE_NAME=9fin
-      - DATABASE_USERNAME=postgres
-      - DATABASE_PASSWORD=password
-      - OPENAI_MODEL=gpt-4o-mini
-      - AGENT_OFFLINE_MODE=false
-      - FEATURE_AGENT_ENABLED=false
-      - LOG_LEVEL=INFO
-      - DB_MAX_CONNECTIONS=10
-    env_file:
-      - .env
-    volumes:
-      - ./financial_data.json:/app/financial_data.json:ro
-      - ./results:/app/results
-    stdin_open: true
-    tty: true
+      - postgres_data:/var/lib/postgresql/data
 
 volumes:
-  postgres-db:
-
-
+  postgres_data:

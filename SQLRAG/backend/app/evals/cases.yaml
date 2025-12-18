@@ -1,0 +1,10 @@
+cases:
+  - input: "List my tasks"
+    expected_intent: "READ_QUERY"
+  - input: "Create a project named 'Beta' owned by Bob"
+    expected_intent: "WRITE_PROPOSAL"
+  - input: "Create a task 'Fix bug' in project 'Beta'"
+    expected_intent: "WRITE_PROPOSAL" 
+    # Or WORKFLOW if it needs to find project id first. Since project 'Beta' needs lookup, mighty be workflow.
+  - input: "Show me all projects"
+    expected_intent: "READ_QUERY"

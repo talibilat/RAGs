@@ -12,26 +12,22 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 WORKDIR /app
 
-COPY requirements.txt /app/requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+# Copy dependency definition
+COPY backend/requirements.txt /app/backend/
+RUN pip install --no-cache-dir -r /app/backend/requirements.txt
 
-COPY src /app/src
-COPY examples /app/examples
-COPY financial_data.json /app/financial_data.json
+# Copy Code
+COPY backend /app/backend
+WORKDIR /app/backend
 
-ENV PYTHONPATH=/app/src \
-    DATA_PATH=/app/financial_data.json \
-    DATABASE_HOSTNAME=postgres \
-    DATABASE_PORT=5432 \
-    DATABASE_NAME=9fin \
-    DATABASE_USERNAME=postgres \
-    DATABASE_PASSWORD=password \
-    OPENAI_MODEL=gpt-4o-mini \
-    AGENT_OFFLINE_MODE=false \
-    FEATURE_AGENT_ENABLED=false \
-    LOG_LEVEL=INFO \
-    DB_MAX_CONNECTIONS=10 \
-    GIT_PYTHON_REFRESH=quiet
+# Install the package itself (optional, but helps with paths)
+RUN pip install --no-cache-dir -e .
 
-# Default command runs interactive chat CLI
-CMD ["python", "-m", "agent.chat_cli", "chat"]
+
+# Healthcheck
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost:8000/health || exit 1
+
+# Default Command (FastAPI)
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+
