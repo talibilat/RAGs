@@ -1,0 +1,19 @@
+{
+  "caveats": [
+    "QASPER does not provide original PDFs for every paper.",
+    "Generated PDFs are marked as generated and should not be treated as original publisher PDFs.",
+    "Original PDF resolution is limited to legally accessible open PDF URLs from available identifiers and open metadata."
+  ],
+  "failed_documents": 5,
+  "fallback_pdfs_generated": 5,
+  "licence_summary": {
+    "cc-by-4.0": 1585
+  },
+  "original_pdfs_downloaded": 1580,
+  "total_answer_annotations": 7993,
+  "total_evidence_annotations": 9921,
+  "total_qasper_documents": 1585,
+  "total_questions": 5049,
+  "total_usable_pdfs": 1585,
+  "validation_errors": []
+}
