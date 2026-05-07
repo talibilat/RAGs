@@ -1,0 +1,611 @@
+{
+  "metrics": {
+    "context_precision": 1.0,
+    "faithfulness": 1.0,
+    "ndcg_at_10": 1.0,
+    "recall_at_10": 1.0
+  },
+  "query_count": 50,
+  "results": [
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q001",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-001",
+        "q001-distractor-1",
+        "q001-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q002",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-002",
+        "q002-distractor-1",
+        "q002-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q003",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-003",
+        "q003-distractor-1",
+        "q003-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q004",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-004",
+        "q004-distractor-1",
+        "q004-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q005",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-005",
+        "q005-distractor-1",
+        "q005-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q006",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-006",
+        "q006-distractor-1",
+        "q006-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q007",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-007",
+        "q007-distractor-1",
+        "q007-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q008",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-008",
+        "q008-distractor-1",
+        "q008-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q009",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-009",
+        "q009-distractor-1",
+        "q009-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q010",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-010",
+        "q010-distractor-1",
+        "q010-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q011",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-011",
+        "q011-distractor-1",
+        "q011-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q012",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-012",
+        "q012-distractor-1",
+        "q012-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q013",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-013",
+        "q013-distractor-1",
+        "q013-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q014",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-014",
+        "q014-distractor-1",
+        "q014-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q015",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-015",
+        "q015-distractor-1",
+        "q015-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q016",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-016",
+        "q016-distractor-1",
+        "q016-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q017",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-017",
+        "q017-distractor-1",
+        "q017-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q018",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-018",
+        "q018-distractor-1",
+        "q018-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q019",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-019",
+        "q019-distractor-1",
+        "q019-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q020",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-020",
+        "q020-distractor-1",
+        "q020-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q021",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-021",
+        "q021-distractor-1",
+        "q021-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q022",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-022",
+        "q022-distractor-1",
+        "q022-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q023",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-023",
+        "q023-distractor-1",
+        "q023-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q024",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-024",
+        "q024-distractor-1",
+        "q024-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q025",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-025",
+        "q025-distractor-1",
+        "q025-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q026",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-026",
+        "q026-distractor-1",
+        "q026-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q027",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-027",
+        "q027-distractor-1",
+        "q027-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q028",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-028",
+        "q028-distractor-1",
+        "q028-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q029",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-029",
+        "q029-distractor-1",
+        "q029-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q030",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-030",
+        "q030-distractor-1",
+        "q030-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q031",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-031",
+        "q031-distractor-1",
+        "q031-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q032",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-032",
+        "q032-distractor-1",
+        "q032-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q033",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-033",
+        "q033-distractor-1",
+        "q033-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q034",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-034",
+        "q034-distractor-1",
+        "q034-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q035",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-035",
+        "q035-distractor-1",
+        "q035-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q036",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-036",
+        "q036-distractor-1",
+        "q036-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q037",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-037",
+        "q037-distractor-1",
+        "q037-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q038",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-038",
+        "q038-distractor-1",
+        "q038-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q039",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-039",
+        "q039-distractor-1",
+        "q039-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q040",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-040",
+        "q040-distractor-1",
+        "q040-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q041",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-041",
+        "q041-distractor-1",
+        "q041-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q042",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-042",
+        "q042-distractor-1",
+        "q042-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q043",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-043",
+        "q043-distractor-1",
+        "q043-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q044",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-044",
+        "q044-distractor-1",
+        "q044-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q045",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-045",
+        "q045-distractor-1",
+        "q045-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q046",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-046",
+        "q046-distractor-1",
+        "q046-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q047",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-047",
+        "q047-distractor-1",
+        "q047-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q048",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-048",
+        "q048-distractor-1",
+        "q048-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q049",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-049",
+        "q049-distractor-1",
+        "q049-distractor-2"
+      ]
+    },
+    {
+      "context_precision": 1.0,
+      "faithfulness": 1.0,
+      "ndcg_at_10": 1.0,
+      "query_id": "q050",
+      "recall_at_10": 1.0,
+      "retrieved_chunk_ids": [
+        "eval-chunk-050",
+        "q050-distractor-1",
+        "q050-distractor-2"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "complete": true,
+  "included_artifacts": [
+    "docker-compose.yml",
+    ".env.example",
+    "step00/docker_compose_ps.log",
+    "step00/config_loader.log",
+    "step01/first_ingestion.log",
+    "step01/duplicate_ingestion.log",
+    "step01/postgres_counts.log",
+    "step02/parsed_markdown_sample.md",
+    "step02/parse_status.log",
+    "step08/postgres_ledger_1000_dump.log",
+    "step03/zero_waste_embeddings.log",
+    "step04/worker_sync.log",
+    "step05/retrieval_rerank.log",
+    "step06/structured_prompt_template.txt",
+    "step06/red_team_test.log",
+    "step07/evaluation_report.json",
+    "step08/latency_report.json"
+  ],
+  "missing_artifacts": [],
+  "output_dir": "evidence/final"
+}
