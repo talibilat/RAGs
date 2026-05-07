@@ -1,0 +1,27 @@
+# Environment & IDE
+.env
+venv/
+.vscode/
+.idea/
+.DS_Store
+
+# Agent & Cache
+.agent/
+.pytest_cache/
+.mypy_cache/
+__pycache__/
+*.py[cod]
+
+# Data & Processing (Large Files)
+data/raw/
+data/processed/
+data/incoming/
+data/eval/
+*.pdf
+*.md.tmp
+
+/plan
+
+# Worktrees
+.worktrees/
+.agent/
