@@ -1,0 +1,5 @@
+{"attempted_url": "https://arxiv.org/pdf/1908.07822.pdf", "doc_id": "1908.07822", "reason": "URL did not return a PDF", "split": "train", "title": "A Multi-level Neural Network for Implicit Causality Detection in Web Texts"}
+{"attempted_url": "https://arxiv.org/pdf/1612.04675.pdf", "doc_id": "1612.04675", "reason": "URL did not return a PDF", "split": "train", "title": "Recurrent Deep Stacking Networks for Speech Recognition"}
+{"attempted_url": "https://arxiv.org/pdf/1802.00396.pdf", "doc_id": "1802.00396", "reason": "URL did not return a PDF", "split": "validation", "title": "Disunited Nations? A Multiplex Network Approach to Detecting Preference Affinity Blocs using Texts and Votes"}
+{"attempted_url": "https://arxiv.org/pdf/2003.00864.pdf", "doc_id": "2003.00864", "reason": "URL did not return a PDF", "split": "test", "title": "Pathological speech detection using x-vector embeddings"}
+{"attempted_url": "https://arxiv.org/pdf/1911.03353.pdf", "doc_id": "1911.03353", "reason": "URL did not return a PDF", "split": "test", "title": "SEPT: Improving Scientific Named Entity Recognition with Span Representation"}
