@@ -1,6 +1,6 @@
 # 🚀 RAGs - Retrieval-Augmented Generation Projects
 
-A comprehensive collection of advanced RAG (Retrieval-Augmented Generation) implementations showcasing different approaches, architectures, and use cases. This repository contains multiple production-ready RAG systems, each designed for specific scenarios and demonstrating various techniques in the RAG ecosystem.
+A comprehensive collection of advanced RAG (Retrieval-Augmented Generation) implementations showcasing different approaches, architectures, and use cases. This repository contains multiple production-ready RAG systems, each designed for specific scenarios and demonstrating various techniques in the RAG ecosystem
 
 ## 📋 Table of Contents
 
